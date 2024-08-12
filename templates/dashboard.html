@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<!-- dashboard styling  -->
+<style>
+    /* body reset */
+    body {
+        background: #f4f4f4;
+        /* background-color: #c7f0e3; */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding-top: 50px;
+    }
+    /* top navbar */
+    .top-navbar {
+        border-bottom: solid #333 1px;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    /* navbar-container-fluid */
+    .container-fluid {
+        align-items: center;
+        /* border: red solid 1px; */
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 95%;
+        height: 100%;
+    }
+
+    /* right navbar container */
+    .navbar-right {
+        /* border: red solid 1px; */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 5px;
+        width: 75%;
+    }
+    /* image container */
+    .nav-image {
+        /* border: red solid 1px; */
+        height: 55px;
+        padding: 5px;
+        width: 55px;
+    }
+    /* nav image */
+    .nav-image > img {
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        height: 100%;
+        width: 100%;
+    }
+    .nav-welcome {
+        /* border: red solid 1px; */
+        height: 70px;
+        justify-content: end;
+    }
+    .nav-welcome > p {
+        /* border: red solid 1px; */
+        font-size: 1em;
+        padding-left: 5px;
+    }
+     /* username */
+     .user {
+        font-weight: bold;
+    }
+    /* left navbar container */
+    .navbar-left {
+        /* border: red solid 1px; */
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-end;
+        padding-top: 15px;
+        padding-right: 10px;
+        width: 25%;
+    }
+    /* navbar icons at left */
+    .notification, .contact {
+        /* border: red solid 1px; */
+        text-align: center;
+        height: 50px;
+    }
+    /* banner grand parent container */
+    .banner-container {
+        /* border: #333 solid 2px; */
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        width: 100%;
+    }
+    /*banner parent container  */
+    .banner {
+        /* border: #333 solid 2px; */
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        flex-direction: column;
+        display: flex;
+        height: 100%;
+        width: 80%;
+    }
+    /* banner child container (banner1) */
+    .banner-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .balance-text, .trxn > p {
+        padding: 0px 20px;
+        }
+    .assets > p {
+        font-size: small;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .fund {
+        margin-bottom: 10px;
+    }
+    .fund, .balance-text, .trxn, .assets {
+        font-size: 12px;
+        padding: 0px 15px;
+        text-align: center;
+    }
+    .fund > button {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    /* banner child container (banner2) */
+    .banner-2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    /* first container section */
+    .first-container {
+        margin: 0 auto;
+        padding: 10px;
+        width: 80%;
+    }
+    /*first heading */
+    .header1 {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .header1 > h2 {
+        font-size: 18px;
+    }
+    /* grid container */
+    .grid-container {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    /* each grid item  container*/
+    .grid-item {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+    /* icons in the grid */
+    .grid-icon {
+        color: #333;   
+        font-size: 40px;
+    }
+    /* text underneath the icon */
+    .grid-text {
+        font-size: 16px;
+        color: #666;
+        margin-top: 10px;
+    }
+    /* if screen is large */
+    @media only screen and (min-width:1000px){
+        .container-fluid{
+            width: 80%;
+        }
+        .first-container {
+            width: 50%;
+        }
+        .banner {
+            width: 50%;
+        }
+    }
+    /* bottom navbar */
+    .bottom-navbar {
+        border-top: solid #333 1px;
+        background: #fff;
+        bottom: 0;
+        height: auto;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    /* bottom navbar ul */
+    .bottom-navbar-container {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    /* buttom navbar list */
+    .bottom-navbar-list {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: inline-block;
+    } 
+    /* each bottom navbar icon 
+    /* .bottom-navbar-icons {
+        /* display: block; 
+
+    } */
+
+</style>
+<!-- end of styling -->
+
+
+<body>
+    <!-- top navbar -->
+    <nav class="top-navbar">
+        <div class="container-fluid">
+            <div class="navbar-right">
+                <div class="nav-image">
+                    <img src="{{ url_for('static', filename='image.jpg')}}" alt="">
+                </div>
+                <div class="nav-welcome">
+                    <p><span class="user">Hi user </span><br> Welcome, let's top up</p>
+                </div>
+            </div>
+            <div  class="navbar-left">
+               <div class="contact">
+                <i class="fas fa-headset" style="font-size: 16px;"></i>
+               </div>
+               <div class="notification">
+                <i class="far fa-bell" style="font-size: 16px;"></i>
+               </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end of top navbar -->
+     
+
+    <!-- banner container -->
+     <div class="banner-container">
+        <div class="banner">
+            <div class="banner-1">
+                <div class="balance-text">
+                    <p>Balance <span><i class="fas fa-eye-slash"></i></span></p>
+                </div>
+                <div class="trxn">
+                    <p>Transactions <span><i class="fas fa-chevron-down"></i></span></p>
+                </div>
+            </div>
+            <div class="banner-2">
+                <div class="assets">
+                    <p>********</p>
+                </div>
+                <div class="fund">
+                    <button type="button">
+                        Add Money
+                    </button>
+                </div>
+            </div>
+            <!-- <div>
+                <div>
+
+                </div>
+            </div> -->
+        </div>
+     </div>
+    <!-- end of banner container -->
+
+    <!-- first container, grid container (services) -->
+    <div class="first-container">
+        <div class="header1">
+            <h2>Services</h2>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    Airtime
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    Data Bundles
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    Electricity
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    School & Exam
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    TV
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    Travel & Hotels
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    Invoice Payments
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    Transport & Toll
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-icon">
+                    icon
+                </div>
+                <div class="grid-text">
+                    Online Shopping
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of grid container -->
+
+    <!-- bottom navbar -->
+    <nav class="bottom-navbar">
+        <div class="container-fluid">
+            <ul class="bottom-navbar-container">
+                <li class="bottom-navbar-list">
+                    <div class="bottom-navbar-icons">
+                        <i class="fas fa-tasks" style="color: #28a745; font-size: 24px;"></i>
+                    </div>
+                </li>
+                <li class="bottom-navbar-list">
+                    <div class="bottom-navbar-icons">
+                        <i class="fas fa-cogs" style="color: #28a745; font-size: 24px;"></i>
+                    </div>
+                </li>
+                <li class="bottom-navbar-list">
+                    <div class="bottom-navbar-icons">
+                        <i class="fas fa-house" style="color: #28a745; font-size: 24px;"></i>
+                    </div>
+                </li>
+                <li class="bottom-navbar-list">
+                    <div class="bottom-navbar-icons">
+                        <!-- <i class="fas fa-hammer" style="color: #28a745; font-size: 24px;"></i> -->
+                        <i class="fas fa-history" style="color: #28a745; font-size: 24px;"></i>
+
+
+                    </div>
+                </li>
+                <li class="bottom-navbar-list">
+                    <div class="bottom-navbar-icons">
+                        <i class="fas fa-user-alt" style="color: #28a745; font-size: 24px;"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- end of bottom navbar -->
+</body>
+</html>
