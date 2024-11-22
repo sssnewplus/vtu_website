@@ -1,4 +1,4 @@
-from main import db
+from . import db
 from flask_login import UserMixin
 
 # user model
@@ -33,6 +33,7 @@ class Referrals(db.Model):
 
 # transaction model
 class Transaction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     # transaction_id
     # user_id
     # user_username
