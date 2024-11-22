@@ -1,0 +1,33 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block title %}
+    forgot password
+{% endblock %}
+
+{% block content %}
+    <div class="auth-wrapper">
+        <div class="auth-box">
+            <!-- <img src="{{ url_for('static', filename='images/auth_images/welcome_icon.png')}}" alt="Cranberry"> -->
+            <h1 class="auth-heading">Search For Your Account</h1>
+            <br>
+            <form class="auth-form" method="post">
+                <label for="username">Username Or Email</label>
+                <input type="text" id="username" class="" placeholder="enter your username or email">
+                <!-- this is where to show target account for password reset -->
+                <!-- {% if accountexist %}
+                    <div class="target_account_container">
+                        {{ account }}
+                    </div>
+                {% else %}
+                    <div class="target_account_container">
+                        <p>No Account fornd!</p>
+                    </div>
+                {% endif %} -->
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">Get Code</button>
+                </div>
+                <br>
+            </form>            
+        </div>
+    </div>
+{% endblock %}

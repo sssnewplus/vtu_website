@@ -1,0 +1,338 @@
+/* constant required css reset */
+    body {
+        background-color: #344a72;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        
+    }
+/* end of reset */
+
+
+/* authentication base template view */
+    /* .content { 
+        /* background-color: #f7fff7; */
+    
+/* end of authentication base template view */
+
+
+/* 6 authentication views*/
+
+
+     /* 1. pre auth view */
+        .pre-auth-wrapper {
+            background-color: #f7fff7;
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            width: 100%;
+        }
+        .pre-auth-container {
+            align-items: center;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            justify-content: center;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            padding: 20px;
+            width: 70%;
+        }
+        .pre-auth-icon {
+            align-items: center;
+            border: none;
+            box-shadow: 0 4px 8px #797878;
+            border-radius: 50%;
+            height: 100px;
+            margin-top: 10px;
+            margin: 20px;
+            width: 100px;
+        }
+        .pre-auth-heading {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+        .pre-auth-brand {
+            font-size: 2rem;
+            font-weight: bolder;
+            margin-top: -10px;
+            text-align: center;
+        }
+        .pre-auth-paragraph {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            width: 60%;
+        }
+        .pre-auth-btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            width: 60%;
+        }
+        .pre-auth-btn-container > button {
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            width: 200px;
+        }
+        .pre-auth-sign-up-btn {
+            background-color: #4CAF50;
+            box-shadow: 0 4px 8px #797878;
+            color: #fff;
+        }
+
+        .pre-auth-login-btn {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px #797878;
+            color: #4CAF50;
+        }
+    /* end of pre-auth view */
+
+
+    /* 2. login view together with sign up view */
+        /* to be served */
+        .auth-wrapper {
+            background-color: #344a72;
+            height: 100%;
+            padding: 30px 0 30px 0;
+            width: 100%;
+        }
+
+        /* to be served */
+        .auth-box {
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            margin: auto;
+            width: 50%;
+        }
+
+        /* to be served */
+        /* .auth-icon {
+        
+        } */
+
+        /* to be served */
+        .auth-heading {
+            margin: 15px 0 -10px 0;
+            text-align: center;
+            width: 70%;
+        }
+        
+        /* to be served */
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 80%;
+           
+        }
+        /* to be served */
+        .auth-form > label {
+            display: flex;
+            font-size: 18px;
+            margin-top: 20px;
+            
+        }
+        /* to be served */
+        .auth-form > input {
+            background-color: transparent;
+            border: none;
+            border: 1px solid gray;
+            border-radius: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-top: 10px;
+            padding: 15px 30px 15px 15px;
+            width: 100%;
+        }
+
+        /* to be served */
+        .submit-container {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* to be served */ 
+        .submit-btn {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 15px;
+            outline: none;
+            width: 40%;
+        }
+
+        .terms {
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .have-account {
+            font-size: 17px;
+            text-align: center;
+        }
+        .terms > a,  .have-account > a {
+            color: #055af8;
+            text-decoration: none;
+        }
+
+    /* end of login and sign up views*/
+
+    /* 3. sign up view */
+        /* served above */
+    /* end of sign up */
+
+    /* 4. find account and request otp view (to forgot password) */
+        /* served */
+        /* .find-account-wrapper {
+        } */
+
+        /* served */
+        /* .find-account-box {
+        } */
+
+        /* served */
+        /* .auth-icon {
+        } */
+        
+        /* served */
+        /* .auth-heading {
+        } */
+
+    /* end of find account view */
+
+    /* 5. validate otp */
+        /* served */
+        /* .confirm-otp-wrapper {
+        } */
+
+        /* served */
+        /* .confirm-otp-box {
+        } */
+
+        /* served */
+        /* .auth-icon {
+        } */
+
+        /* served */
+        /* .auth-heading {
+        } */
+
+
+    /* end of validate otp */
+
+    /* 6. create new password */
+        /* served */
+        /* .create-new-wrapper {
+        } */
+
+        /* served */
+        /* .create-new-box {
+        } */
+
+        /* served */
+        /* .auth-icon {
+        } */
+
+        /* served */
+        /* .auth-heading {
+            }*/
+
+
+    /* end of create new password */
+
+/* end of six authentication views */
+
+
+
+
+
+/* for medium and small screens */
+    @media (max-width: 689px) {
+
+        /* authentication base template view */
+            /* .content { 
+
+            } */
+        /* end of authentication base template view */
+
+
+        /* 6 authentication views */
+        /* 1. pre auth view */
+            .pre-auth-btn-container {
+                display: flex;
+                justify-content: center; 
+                gap: 10px;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                width: 40%;
+            }
+            .pre-auth-btn-container > button {
+                width: 100%;
+            }
+        /* end of pre-auth view */
+
+        /* 2. login viewntogether with sign up view */
+            .auth-wrapper {
+                box-sizing: border-box;
+                padding: 40px 15px 40px 15px;
+                width: 100%;
+            }
+            .auth-box {
+                box-sizing: border-box;
+                height: 80%;
+                width: 100%;
+            }
+            .auth-heading {
+                width: 55%;
+            }
+        /* end of login view */
+
+        /* 3. sign up view */
+            /* served above */
+        /* end of sign up */
+
+        /* 4. find account and request otp view (to forgot password) */
+            
+        /* end of find account view */
+
+        /* 5. validate otp */
+        
+        /* end of validate otp */
+
+        /* 6. create new password */
+        
+        /* end of create new password */
+
+        
+        /* end of six authentication views */
+    
+    }
+    /* end of medium screen */

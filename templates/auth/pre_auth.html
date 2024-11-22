@@ -1,0 +1,29 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block title %}
+    login/sign up
+{% endblock %}
+
+{% block content %}
+    <div class="pre-auth-wrapper">
+        <div class="pre-auth-container">
+            <img src="{{url_for('static', filename='images/auth_images/icon.png')}}" alt="" class="pre-auth-icon">
+            <h3 class="pre-auth-heading">
+                Welcome To:
+            </h3>
+            <h1 class="pre-auth-brand">
+                Cranberry VTU Platform
+            </h1> 
+    
+            <p class="pre-auth-paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eos aut iusto, reprehenderit quis ab dolores enim non debitis excepturi quod assumenda quasi voluptatem atque temporibus aliquid maiores ipsa qui.
+            </p>
+            <div class="pre-auth-btn-container">
+                <button class="pre-auth-sign-up-btn" type="submit" onclick="location.href='/sign-up'">SignUp</button>
+                <!-- <p class="pre-auth-or">or</p> -->
+                <button class="pre-auth-login-btn"type="submit" onclick="location.href='/login'">LogIn</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

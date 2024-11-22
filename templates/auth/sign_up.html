@@ -1,0 +1,40 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block title %}
+    sign up
+{% endblock %}
+
+{% block content %}
+    <div class="auth-wrapper">
+        <div class="auth-box">
+            <!-- <img src="{{ url_for('static', filename='images/auth_images/icon.png')}}" class="sign-up-icon"> -->
+            <h1 class="auth-heading"><strong>Sign Up</strong></h1>
+            <br>
+            <form class="auth-form" method="post">
+                <label for="name">Full Name</label>
+                <input type="text" placeholder="enter your fullname" id="full_name" name="full_name">
+                <label for="username">Username</label>
+                <input type="text" placeholder="generate username" id="username" name="username">
+                <label for="email">Email Address</label>
+                <input type="email" placeholder="enter valid email" id="email" name="email">
+                <label for="phone">Phone Number</label>
+                <input type="tel" placeholder="enter valid phone number" id="phone_number" name="phone_number">
+                <label for="referral">Referral Username</label>
+                <input type="text" placeholder="enter referral username (optional)" id="referral" name="referral_username">
+                <label for="password1">Password</label>
+                <input type="password" placeholder="Password" id="password1" name="password1">
+                <label for="password2">Confirm Password</label>
+                <input type="password" placeholder="re-enter password" id="password2" name="password2">
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </div>
+                <p class="terms">
+                    By clicking the Sign Up button, you agree to our
+                    <a class="term" href="#">Policy Privacy</a> and our <a class="term" href="#">Terms and Conditions</a>
+                </p>
+                <p class="have-account">Alredy have account? <a class="term" href="/login">Login</a></p>
+            </form>
+        </div>
+        
+    </div>
+{% endblock %} 

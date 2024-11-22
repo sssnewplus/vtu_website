@@ -1,0 +1,29 @@
+{% extends 'auth/auth_base.html' %}
+
+{% block title %}
+    login
+{% endblock %}
+
+{% block content %}
+    <div class="auth-wrapper">
+        <div class="auth-box">
+            <!-- <img src="{{ url_for('static', filename='images/auth_images/icon.png')}}" class="login-icon"> -->
+            <h1 class="auth-heading"><strong>Login</strong></h1>
+            <br>
+            <form class="auth-form" method="post">
+                <label for="username">Username Or Email</label>
+                <input type="text" placeholder="enter your username or email" id="username" name="username">
+                <label for="password1">Password</label>
+                <input type="password" placeholder="Password" id="password" name="password">
+                <div class="submit-container">
+                    <button type="submit" class="submit-btn">Login</button>
+                </div>
+                <div>
+                    <p class="have-account"><a class="term" href="/find-account">Forgot Password</a></p>
+                    <p class="have-account">You don't have account? <a class="term" href="/sign-up">Sign Up</a></p>
+                </div>
+                </form>   
+           
+        </div>
+    </div>
+{% endblock %}
